@@ -1,0 +1,21 @@
+Project Name	Business rules
+Health Tracker	Dashboard with the records of a week should be present. User can choose what to track.(BP,Sugar, Sleep)
+Hospital management system	Doctor can be visiting or In-house. Visiting doctor cannot have more than 4 hours of appointments
+Employee grievances redressal	Employee cannot raise a request until he is approved. Also Employee cannot raise a new request if any 2 of his previous requests are not closed(One open request is acceptable)
+coffee store management	All orders can have the same product for any quantity. If selected products have more than 2 as quantity then a discount should be applied
+Quiz Creation	If user completes test in half time then a special certificate of quick achiever should be issued. These certificates can be downloaded by user. Also a record of the same should be available in user's profile
+Real Estate app like 99acres	Only house rent or sale can be displayed. The owner contact details will be displayed only to premium members
+Hotel booking app	If a user cancels 2 bookings continuously, he will be deactivated. Can raise request for activation with reason for cancellations
+matrimonial app	Only premium members can see contact details. Even premium members can contact maximum of 5 profiles per day
+job portal app	If a job seeker is applying for a job an
+Health insurance app	Show updates on insurance that are going to expire in a month. Allow renewal at a discounted price if no claim was made the previous year
+No broker app	Add Realtime notification for helper entry and deliver or service entry
+news app like in short	Allow user to select topics to show trending news on same on top. Only 3 topic  maximum, but Chan be changed
+Toy store management	Allow online payment to have 5% discount on total amount. Add delivery charges the order values less than 1000
+Pizza store app	Allow users to filter pizza based on veg/Non-Veg. If user ordered a newly introduced item give instant 5% discount
+blood donation app	If a user is donor allow user access to advanced search and allow display of contact details.
+Event management app	For events hosted on non peek time, charges cannot be greater than 50/ ticket
+Tutorial app like teams and zoom	Add course and show progress of learning like(registered, started, completed) If user completes 3 courses give 10%   discount on next course purchase
+Music app like spotify or wynk	Normal user cannot have more than 5 songs in a playlist and only 3 play list
+Movie booking system	More than 5 tickets cannot be booked in a single booking. If user books makes more than 3 booking a week then display a "Free popcorn " or 10% discount option for user
+Blogging app like twitter	To read live feeds add trending topics
