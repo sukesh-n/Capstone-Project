@@ -1,7 +1,7 @@
 Guest Experience
 => Guests can visit the website and check room availability without logging in.
 
-User Registration
+Guest Registration
 => Guests must register to avail services.
 => Registered guests can access discounts and offers.
 => Guests can raise tickets for any queries.
