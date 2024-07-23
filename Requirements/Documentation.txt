@@ -1,0 +1,40 @@
+Guest Experience
+=> Guests can visit the website and check room availability without logging in.
+
+Guest Registration
+=> Guests must register to avail services.
+=> Registered guests can access discounts and offers.
+=> Guests can raise tickets for any queries.
+
+Restrictions
+=> Guests cannot book the same hotel concurrently if they have an active booking.
+
+Cancellation Policy
+=> If a user cancels 2 bookings consecutively, their account will be deactivated.
+=> The user can request reactivation by providing reasons for cancellations.
+
+Hotel Owners
+=> Each hotel owner manages their hotels with a separate account.
+=> Hotel owners register and list their hotels.
+=> They update room availability and prices.
+=> Owners manage offers and discounts.
+=> Billing is based on user bookings; commission is deducted from bookings made through the site.
+=> If hotel owners failed to pay bill for 3 consecutive months, their account will be deactivated.
+
+Revenue Generation
+=> Revenue is generated from bookings.
+=> If guests pay on the website, a 10% commission is deducted.
+=> If guests pay at the hotel for bookings made through the site, a 5% charge is billed.
+
+Admin
+=> Admin has access to all hotels and guest accounts.
+=> Admin can delete guest accounts for fraudulent activity.
+=> Admin can delete hotel owner accounts for fraudulent activity.
+=> Admin can remove hotels if they are fraudulent or poorly maintained.
+
+Guest Benefits
+=> Luggage insurance is provided for bookings made through the website.
+=> Free pick-up and drop facilities are available (subject to terms and conditions) for website bookings.
+
+Hotel Owner Benefits
+=> Hotel owners receive free promotion of their hotels upon registration.

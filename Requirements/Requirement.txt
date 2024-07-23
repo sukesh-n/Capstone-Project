@@ -1,0 +1,2 @@
+Project Name and Business rules
+Hotel booking app = If a user cancels 2 bookings continuously, he will be deactivated. Can raise request for activation with reason for cancellations
