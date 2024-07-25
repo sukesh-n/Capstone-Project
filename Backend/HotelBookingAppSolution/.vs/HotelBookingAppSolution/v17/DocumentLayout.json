@@ -1,0 +1,160 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\vc\\Desktop\\Capstone\\Backend\\HotelBookingAppSolution\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F3EF91F5-A0C9-4899-B91C-FAE4E406D945}|HotelBookingApp\\HotelBookingApp.csproj|c:\\users\\vc\\desktop\\capstone\\backend\\hotelbookingappsolution\\hotelbookingapp\\models\\hotels\\hotel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3EF91F5-A0C9-4899-B91C-FAE4E406D945}|HotelBookingApp\\HotelBookingApp.csproj|solutionrelative:hotelbookingapp\\models\\hotels\\hotel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3EF91F5-A0C9-4899-B91C-FAE4E406D945}|HotelBookingApp\\HotelBookingApp.csproj|c:\\users\\vc\\desktop\\capstone\\backend\\hotelbookingappsolution\\hotelbookingapp\\models\\guests\\guestdemographics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3EF91F5-A0C9-4899-B91C-FAE4E406D945}|HotelBookingApp\\HotelBookingApp.csproj|solutionrelative:hotelbookingapp\\models\\guests\\guestdemographics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3EF91F5-A0C9-4899-B91C-FAE4E406D945}|HotelBookingApp\\HotelBookingApp.csproj|c:\\users\\vc\\desktop\\capstone\\backend\\hotelbookingappsolution\\hotelbookingapp\\models\\hotels\\hoteldemographics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3EF91F5-A0C9-4899-B91C-FAE4E406D945}|HotelBookingApp\\HotelBookingApp.csproj|solutionrelative:hotelbookingapp\\models\\hotels\\hoteldemographics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3EF91F5-A0C9-4899-B91C-FAE4E406D945}|HotelBookingApp\\HotelBookingApp.csproj|c:\\users\\vc\\desktop\\capstone\\backend\\hotelbookingappsolution\\hotelbookingapp\\models\\hotels\\hotelgroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3EF91F5-A0C9-4899-B91C-FAE4E406D945}|HotelBookingApp\\HotelBookingApp.csproj|solutionrelative:hotelbookingapp\\models\\hotels\\hotelgroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3EF91F5-A0C9-4899-B91C-FAE4E406D945}|HotelBookingApp\\HotelBookingApp.csproj|c:\\users\\vc\\desktop\\capstone\\backend\\hotelbookingappsolution\\hotelbookingapp\\models\\guests\\guest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3EF91F5-A0C9-4899-B91C-FAE4E406D945}|HotelBookingApp\\HotelBookingApp.csproj|solutionrelative:hotelbookingapp\\models\\guests\\guest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3EF91F5-A0C9-4899-B91C-FAE4E406D945}|HotelBookingApp\\HotelBookingApp.csproj|c:\\users\\vc\\desktop\\capstone\\backend\\hotelbookingappsolution\\hotelbookingapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F3EF91F5-A0C9-4899-B91C-FAE4E406D945}|HotelBookingApp\\HotelBookingApp.csproj|solutionrelative:hotelbookingapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3EF91F5-A0C9-4899-B91C-FAE4E406D945}|HotelBookingApp\\HotelBookingApp.csproj|c:\\users\\vc\\desktop\\capstone\\backend\\hotelbookingappsolution\\hotelbookingapp\\context\\hotelbookingappcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3EF91F5-A0C9-4899-B91C-FAE4E406D945}|HotelBookingApp\\HotelBookingApp.csproj|solutionrelative:hotelbookingapp\\context\\hotelbookingappcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3EF91F5-A0C9-4899-B91C-FAE4E406D945}|HotelBookingApp\\HotelBookingApp.csproj|c:\\users\\vc\\desktop\\capstone\\backend\\hotelbookingappsolution\\hotelbookingapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3EF91F5-A0C9-4899-B91C-FAE4E406D945}|HotelBookingApp\\HotelBookingApp.csproj|solutionrelative:hotelbookingapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HotelDemographics.cs",
+              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Capstone\\Backend\\HotelBookingAppSolution\\HotelBookingApp\\Models\\Hotels\\HotelDemographics.cs",
+              "RelativeDocumentMoniker": "HotelBookingApp\\Models\\Hotels\\HotelDemographics.cs",
+              "ToolTip": "C:\\Users\\vc\\Desktop\\Capstone\\Backend\\HotelBookingAppSolution\\HotelBookingApp\\Models\\Hotels\\HotelDemographics.cs",
+              "RelativeToolTip": "HotelBookingApp\\Models\\Hotels\\HotelDemographics.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAA+AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T05:22:19.389Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Hotel.cs",
+              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Capstone\\Backend\\HotelBookingAppSolution\\HotelBookingApp\\Models\\Hotels\\Hotel.cs",
+              "RelativeDocumentMoniker": "HotelBookingApp\\Models\\Hotels\\Hotel.cs",
+              "ToolTip": "C:\\Users\\vc\\Desktop\\Capstone\\Backend\\HotelBookingAppSolution\\HotelBookingApp\\Models\\Hotels\\Hotel.cs",
+              "RelativeToolTip": "HotelBookingApp\\Models\\Hotels\\Hotel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAA+AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T05:20:38.321Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "HotelBookingAppContext.cs",
+              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Capstone\\Backend\\HotelBookingAppSolution\\HotelBookingApp\\Context\\HotelBookingAppContext.cs",
+              "RelativeDocumentMoniker": "HotelBookingApp\\Context\\HotelBookingAppContext.cs",
+              "ToolTip": "C:\\Users\\vc\\Desktop\\Capstone\\Backend\\HotelBookingAppSolution\\HotelBookingApp\\Context\\HotelBookingAppContext.cs",
+              "RelativeToolTip": "HotelBookingApp\\Context\\HotelBookingAppContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T05:15:45.81Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HotelGroup.cs",
+              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Capstone\\Backend\\HotelBookingAppSolution\\HotelBookingApp\\Models\\Hotels\\HotelGroup.cs",
+              "RelativeDocumentMoniker": "HotelBookingApp\\Models\\Hotels\\HotelGroup.cs",
+              "ToolTip": "C:\\Users\\vc\\Desktop\\Capstone\\Backend\\HotelBookingAppSolution\\HotelBookingApp\\Models\\Hotels\\HotelGroup.cs",
+              "RelativeToolTip": "HotelBookingApp\\Models\\Hotels\\HotelGroup.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T05:12:40.36Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GuestDemographics.cs",
+              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Capstone\\Backend\\HotelBookingAppSolution\\HotelBookingApp\\Models\\Guests\\GuestDemographics.cs",
+              "RelativeDocumentMoniker": "HotelBookingApp\\Models\\Guests\\GuestDemographics.cs",
+              "ToolTip": "C:\\Users\\vc\\Desktop\\Capstone\\Backend\\HotelBookingAppSolution\\HotelBookingApp\\Models\\Guests\\GuestDemographics.cs",
+              "RelativeToolTip": "HotelBookingApp\\Models\\Guests\\GuestDemographics.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T05:10:32.719Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Guest.cs",
+              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Capstone\\Backend\\HotelBookingAppSolution\\HotelBookingApp\\Models\\Guests\\Guest.cs",
+              "RelativeDocumentMoniker": "HotelBookingApp\\Models\\Guests\\Guest.cs",
+              "ToolTip": "C:\\Users\\vc\\Desktop\\Capstone\\Backend\\HotelBookingAppSolution\\HotelBookingApp\\Models\\Guests\\Guest.cs",
+              "RelativeToolTip": "HotelBookingApp\\Models\\Guests\\Guest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T05:08:35.851Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Capstone\\Backend\\HotelBookingAppSolution\\HotelBookingApp\\appsettings.json",
+              "RelativeDocumentMoniker": "HotelBookingApp\\appsettings.json",
+              "ToolTip": "C:\\Users\\vc\\Desktop\\Capstone\\Backend\\HotelBookingAppSolution\\HotelBookingApp\\appsettings.json",
+              "RelativeToolTip": "HotelBookingApp\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-07-25T04:06:47.981Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\vc\\Desktop\\Capstone\\Backend\\HotelBookingAppSolution\\HotelBookingApp\\Program.cs",
+              "RelativeDocumentMoniker": "HotelBookingApp\\Program.cs",
+              "ToolTip": "C:\\Users\\vc\\Desktop\\Capstone\\Backend\\HotelBookingAppSolution\\HotelBookingApp\\Program.cs",
+              "RelativeToolTip": "HotelBookingApp\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T04:19:37.232Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
