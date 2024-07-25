@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace HotelBookingApp.Models.Hotel
+namespace HotelBookingApp.Models.Hotels.HotelGroup
 {
     public class HotelGroup
     {

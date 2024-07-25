@@ -14,6 +14,11 @@ namespace HotelBookingApp.Models.Hotels
         public string HotelZipCode { get; set; } = string.Empty;
         public string LandMark { get; set; } = string.Empty;
         public string MapCoordinates { get; set; } = string.Empty;
-
+        public string NearestAirport { get; set; } = string.Empty;
+        public float DistanceFromAirport { get; set; }
+        public string NearestRailwayStation { get; set; } = string.Empty;
+        public float DistanceFromRailwayStation { get; set; }
+        public string NearestBusStand { get; set; } = string.Empty;
+        public float DistanceFromBusStand { get; set; }
     }
 }
