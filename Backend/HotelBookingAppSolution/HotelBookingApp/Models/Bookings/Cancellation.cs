@@ -15,8 +15,6 @@ namespace HotelBookingApp.Models.Bookings
         public string CnacellationStatus { get; set; } = string.Empty;
         public string CancellationBy { get; set; } = string.Empty;
         public string RefundStatus { get; set; } = string.Empty;
-        public int ContinuousCancellationCount { get; set; }
-        public int TotalCancellationCount { get; set; }
 
     }
 }

@@ -26,7 +26,7 @@ namespace HotelBookingApp.Models.Booking
         public int NumberOfChildren { get; set; }
         public string BookingType { get; set; } =string.Empty;
         public string PaymentStatus { get; set; } = string.Empty;
-        public string CurrentInOurStatus { get; set; } = string.Empty;
+        public string CurrentInOutStatus { get; set; } = string.Empty;
 
 
     }

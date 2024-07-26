@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace HotelBookingApp.Models.Hotels.HotelGroup
+namespace HotelBookingApp.Models.Hotels.HotelGroups
 {
     public class HotelGroupSecurity
     {

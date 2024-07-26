@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace HotelBookingApp.Models.Hotels.HotelBranch
+namespace HotelBookingApp.Models.Hotels.HotelBranches
 {
     public class HotelBranchSecurity
     {

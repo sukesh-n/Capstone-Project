@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace HotelBookingApp.Models.Admin
+namespace HotelBookingApp.Models.Admins
 {
     public class Admin
     {
