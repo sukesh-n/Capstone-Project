@@ -11,7 +11,7 @@ namespace HotelBookingApp.Models.Payments
         public int BookingPaymentId { get; set; }
         public bool IsRefundOnCancellation { get; set; }
         public decimal RefundAmount { get; set; }
-        public string RefundMethod { get; set; } = string.Empty;
-        public string RefundStatus { get; set; } = string.Empty;
+        public EnumPaymentMethod RefundMethod { get; set; }
+        public EnumPaymentStatus RefundStatus { get; set; }
     }
 }

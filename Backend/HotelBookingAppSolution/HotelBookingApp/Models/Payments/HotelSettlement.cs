@@ -11,8 +11,11 @@ namespace HotelBookingApp.Models.Payments
         public int HotelGroupId { get; set; }
         [ForeignKey("HotelBranchId")]
         public int HotelBranchId { get; set; }
+        [ForeignKey("BookingId")]
+        public int BookingId { get; set; }
+        public float TotalAmountReceivedFromBooking { get; set; }
         public float AmountToBePaid { get; set; }
         public DateTime PayoutDate { get; set; }
-        public DateTime LastTransactionDate { get; set; }
+        public DateTime TransactionDate { get; set; }
     }
 }

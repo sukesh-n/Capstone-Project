@@ -1,6 +1,6 @@
 ﻿namespace HotelBookingApp.Models.Bookings
 {
-    public enum BookingTypes
+    public enum EnumBookingTypes
     {
         OnlineBookingWithOnlinePayment,
         OnlineBookingWithOfflinePayment

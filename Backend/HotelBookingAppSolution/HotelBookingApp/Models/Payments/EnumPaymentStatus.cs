@@ -1,4 +1,4 @@
-﻿namespace HotelBookingApp.Models.Bookings
+﻿namespace HotelBookingApp.Models.Payments
 {
     public enum EnumPaymentStatus
     {

@@ -25,8 +25,9 @@ namespace HotelBookingApp.Models.Booking
         public int RoomTypeId { get; set; }
         public int NumberOfAdults { get; set; }
         public int NumberOfChildren { get; set; }
-        public BookingTypes BookingType { get; set; }
-        public EnumPaymentStatus PaymentStatus { get; set; }
+        public float TotalAmount { get; set; }
+        public EnumBookingTypes BookingType { get; set; }
+        public EnumBookingPaymentStatus BookingPaymentStatus { get; set; }
         public EnumCurrentInOutStatus CurrentInOutStatus { get; set; }
 
 
