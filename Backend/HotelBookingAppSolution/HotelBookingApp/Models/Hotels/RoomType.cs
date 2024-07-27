@@ -10,7 +10,8 @@ namespace HotelBookingApp.Models.Hotels
         [Required]
         [ForeignKey("HotelBranchId")]
         public int HotelBranchId { get; set; }
-        public string RoomTypeName { get; set; } = string.Empty;
+        public EnumRoomTypes RoomTypeName { get; set; }
+        public string RoomTypeDescription { get; set; } = string.Empty;
         public int NumberOfRooms { get; set; }
         public float RoomPrice { get; set; }
         public int NumberOfAdults { get; set; }

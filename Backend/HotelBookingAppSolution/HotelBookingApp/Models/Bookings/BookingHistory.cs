@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using HotelBookingApp.Models.Bookings;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HotelBookingApp.Models.Booking
@@ -13,7 +14,7 @@ namespace HotelBookingApp.Models.Booking
         [Required]
         [ForeignKey("GuestId")]
         public int GuestId { get; set; }
-        public string BookingStatus { get; set; } = string.Empty;
+        public EnumBookingStatus BookingStatus { get; set; }
         public DateOnly CheckInDate { get; set; }
         public DateOnly CheckOutDate { get; set; }
         public TimeOnly CheckInTime { get; set; }
@@ -21,12 +22,12 @@ namespace HotelBookingApp.Models.Booking
         public int NumberOfRooms { get; set; }
         [Required]
         [ForeignKey("RoomTypeId")]
-        public string RoomTypeId { get; set; } = string.Empty;
+        public int RoomTypeId { get; set; }
         public int NumberOfAdults { get; set; }
         public int NumberOfChildren { get; set; }
-        public string BookingType { get; set; } =string.Empty;
-        public string PaymentStatus { get; set; } = string.Empty;
-        public string CurrentInOutStatus { get; set; } = string.Empty;
+        public BookingTypes BookingType { get; set; }
+        public EnumPaymentStatus PaymentStatus { get; set; }
+        public EnumCurrentInOutStatus CurrentInOutStatus { get; set; }
 
 
     }
