@@ -1,11 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using HotelBookingApp.Models.Hotels.HotelGroups;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HotelBookingApp.Models.Hotels.HotelBranches
 {
-    public class Hotel
+    public class HotelBranch
     {
-        [ForeignKey("HotelGroupId")]
         public int HotelGroupId { get; set; }
         [Required]
         [Key]
@@ -15,6 +15,7 @@ namespace HotelBookingApp.Models.Hotels.HotelBranches
         public string HotelBranchManager { get; set; } = string.Empty;
         public string HotelBranchEmail { get; set; } = string.Empty;
         public string HotelBranchPhone { get; set; } = string.Empty;
-
+        [ForeignKey("HotelGroupId")]
+        public HotelGroup? HotelGroup { get; set; }
     }
 }

@@ -1,3 +1,6 @@
+using HotelBookingApp.Context;
+using Microsoft.EntityFrameworkCore;
+
 namespace HotelBookingApp
 {
     public class Program
@@ -13,6 +16,12 @@ namespace HotelBookingApp
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            #region Database Connection
+            builder.Services.AddDbContext<HotelBookingDbContext>(options =>
+            {
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+            });
+            #endregion
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

@@ -1,10 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HotelBookingApp.Models.Guests
 {
     public class GuestDemographics
     {
-        [ForeignKey("GuestId")]
+        [Key]
         public int GuestId { get; set; }
         public int DoorNumber { get; set; }
         public string Address { get; set; } = string.Empty;
@@ -12,6 +13,8 @@ namespace HotelBookingApp.Models.Guests
         public string State { get; set; } = string.Empty;
         public string Country { get; set; } = string.Empty;
         public string ZipCode { get; set; } = string.Empty;
+        [ForeignKey("GuestId")]
+        public Guest? Guest { get; set; }
 
     }
 }

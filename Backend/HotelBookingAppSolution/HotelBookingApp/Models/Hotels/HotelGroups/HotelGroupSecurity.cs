@@ -1,12 +1,15 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HotelBookingApp.Models.Hotels.HotelGroups
 {
     public class HotelGroupSecurity
     {
-        [ForeignKey("HotelGroupId")]
+        [Key]
         public int HotelGroupId { get; set; }
         public byte[]? HotelGroupPassword { get; set; }
         public byte[]? HotelGroupPasswordHashKey { get; set; }
+        [ForeignKey("HotelGroupId")]
+        public HotelGroup? HotelGroup { get; set; }
     }
 }

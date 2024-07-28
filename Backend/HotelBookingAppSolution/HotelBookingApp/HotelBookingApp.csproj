@@ -26,9 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\GuestController\" />
     <Folder Include="Exceptions\" />
-    <Folder Include="Services\GuestService\" />
   </ItemGroup>
 
 </Project>

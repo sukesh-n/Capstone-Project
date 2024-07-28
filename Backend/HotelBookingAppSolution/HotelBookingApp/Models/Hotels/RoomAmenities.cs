@@ -1,10 +1,13 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using HotelBookingApp.Models.Hotels.HotelBranches;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HotelBookingApp.Models.Hotels
 {
     public class RoomAmenities
     {
-        [ForeignKey("RoomTypeId")]
+        [Key]
+        public int HotelBranchId { get; set; }
         public int RoomTypeId { get; set; }
         public bool IsOnGroundFloor { get; set; }
         public bool HasWifi { get; set; }
@@ -20,5 +23,9 @@ namespace HotelBookingApp.Models.Hotels
         public bool IsWindowAvailable { get; set; }
         public bool IsBalconyAvailable { get; set; }
         public bool IsBeachViewAvailable { get; set; }
+        [ForeignKey("HotelBranchId")]
+        public HotelBranch? Hotel { get; set; }
+        [ForeignKey("RoomTypeId")]
+        public RoomType? RoomType { get; set; }
     }
 }

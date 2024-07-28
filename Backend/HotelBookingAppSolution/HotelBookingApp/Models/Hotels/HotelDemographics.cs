@@ -1,10 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using HotelBookingApp.Models.Hotels.HotelBranches;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HotelBookingApp.Models.Hotels
 {
     public class HotelDemographics
     {
-        [ForeignKey("HotelId")]
+        [Key]
         public int HotelId { get; set; }
         public string HotelAddressLine1 { get; set; } = string.Empty;
         public string HotelAddressLine2 { get; set; } = string.Empty;
@@ -20,5 +22,7 @@ namespace HotelBookingApp.Models.Hotels
         public float DistanceFromRailwayStation { get; set; }
         public string NearestBusStand { get; set; } = string.Empty;
         public float DistanceFromBusStand { get; set; }
+        [ForeignKey("HotelId")]
+        public HotelBranch? Hotel { get; set; }
     }
 }

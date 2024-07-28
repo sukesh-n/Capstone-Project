@@ -4,7 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace HotelBookingApp.DTO.HotelGroupDTO
 {
-    public class HotelBranchDTO : Hotel
+    public class HotelBranchDTO : HotelBranch
     {
         public RoomType? RoomType { get; set; }
         public RoomAmenities? RoomAmenities { get; set; }

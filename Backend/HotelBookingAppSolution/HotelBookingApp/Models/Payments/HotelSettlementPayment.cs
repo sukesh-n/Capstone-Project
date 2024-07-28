@@ -7,11 +7,12 @@ namespace HotelBookingApp.Models.Payments
     {
         [Key]
         public int HotelSettlementPaymentId { get; set; }
-        [ForeignKey("HotelSettlementId")]
         public int HotelSettlementId { get; set; }
         public EnumPaymentStatus SettlementPaymentStatus { get; set; }
         public DateTime PaymentDate { get; set; }
         public EnumPaymentMethod SettlementPaymentMethod { get; set; }
-         
+        [ForeignKey("HotelSettlementId")]
+        public HotelSettlement? HotelSettlement { get; set; }
+
     }
 }
