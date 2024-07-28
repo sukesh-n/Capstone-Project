@@ -5,27 +5,27 @@ namespace HotelBookingApp.Services.HotelGroupService
 {
     public class HotelGroupManagementService : IHotelGroupManagementService
     {
-        public Task<HotelGroupsDTO> AddNewHotelGroup(HotelGroupsDTO addNewHotelGroupDTO)
+        public Task<HotelGroupsDTO> AddHotelGroupDetails(HotelGroupsDTO addNewHotelGroupDTO)
         {
             throw new NotImplementedException();
         }
 
-        public Task<HotelGroupsDTO> DeleteHotelGroup(int hotelGroupId)
+        public Task<HotelGroupsDTO> DeleteHotelGroupDetails(int hotelGroupId)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<HotelGroupsDTO>> GetAllHotelGroup()
+        public Task<IEnumerable<HotelGroupsDTO>> GetAllHotelGroupDetails()
         {
             throw new NotImplementedException();
         }
 
-        public Task<HotelGroupsDTO> GetHotelGroup(int hotelGroupId)
+        public Task<HotelGroupsDTO> GetHotelGroupDetails(int hotelGroupId)
         {
             throw new NotImplementedException();
         }
 
-        public Task<HotelGroupsDTO> UpdateHotelGroup(HotelGroupsDTO HotelGroupDTO)
+        public Task<HotelGroupsDTO> UpdateHotelGroupDetails(HotelGroupsDTO HotelGroupDTO)
         {
             throw new NotImplementedException();
         }

@@ -1,6 +1,8 @@
-﻿namespace HotelBookingApp.Repositories.BookingsRepository
+﻿using HotelBookingApp.Interface.IRepository.IBookings;
+
+namespace HotelBookingApp.Repositories.BookingsRepository
 {
-    public class BookingHistoryRepository
+    public class BookingHistoryRepository : IBookingHistoryRepository
     {
     }
 }

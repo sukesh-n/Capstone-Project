@@ -1,6 +1,8 @@
-﻿namespace HotelBookingApp.Repositories.HotelsRepository
+﻿using HotelBookingApp.Interface.IRepository.IHotels;
+
+namespace HotelBookingApp.Repositories.HotelsRepository
 {
-    public class GroupFeedbackRepository
-    {
+    public class GroupFeedbackRepository : IGroupFeedbackRepository
+    { 
     }
 }

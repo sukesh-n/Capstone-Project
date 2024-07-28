@@ -1,6 +1,8 @@
-﻿namespace HotelBookingApp.Repositories.HotelsRepository
+﻿using HotelBookingApp.Interface.IRepository.IHotels;
+
+namespace HotelBookingApp.Repositories.HotelsRepository
 {
-    public class BranchFeedbackRepository
+    public class BranchFeedbackRepository : IBranchFeedbackRepository
     {
     }
 }

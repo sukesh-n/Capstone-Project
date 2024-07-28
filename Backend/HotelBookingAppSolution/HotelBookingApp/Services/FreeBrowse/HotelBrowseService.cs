@@ -1,6 +1,8 @@
-﻿namespace HotelBookingApp.Services.FreeBrowse
+﻿using HotelBookingApp.Interface.IService.FreeBrowse;
+
+namespace HotelBookingApp.Services.FreeBrowse
 {
-    public class HotelBrowseService
+    public class HotelBrowseService : IHotelBrowseService
     {
 
     }

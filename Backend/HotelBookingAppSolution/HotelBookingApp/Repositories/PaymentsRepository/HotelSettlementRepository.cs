@@ -1,6 +1,8 @@
-﻿namespace HotelBookingApp.Repositories.PaymentsRepository
+﻿using HotelBookingApp.Interface.IRepository.Payments;
+
+namespace HotelBookingApp.Repositories.PaymentsRepository
 {
-    public class HotelSettlementRepository
+    public class HotelSettlementRepository : IHotelSettlementRepository
     {
     }
 }

@@ -1,6 +1,8 @@
-﻿namespace HotelBookingApp.Repositories.GuestsRepository
+﻿using HotelBookingApp.Interface.IRepository.IGuests;
+
+namespace HotelBookingApp.Repositories.GuestsRepository
 {
-    public class GuestRepository
+    public class GuestRepository : IGuestRepository
     {
     }
 }

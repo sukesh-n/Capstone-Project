@@ -1,6 +1,8 @@
-﻿namespace HotelBookingApp.Repositories.AdminsRepository
+﻿using HotelBookingApp.Interface.IRepository.IAdmins;
+
+namespace HotelBookingApp.Repositories.AdminsRepository
 {
-    public class AdminRepository
+    public class AdminRepository : IAdminRepository
     {
     }
 }
