@@ -4,11 +4,9 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace HotelBookingApp.DTO.HotelGroupDTO
 {
-    public class HotelBranchDTO : HotelBranch
+    public class HotelBranchDTO
     {
-        public RoomType? RoomType { get; set; }
-        public RoomAmenities? RoomAmenities { get; set; }
-        public HotelImages? HotelImages { get; set; }
+        public int HotelBranchId { get; set; }
         public HotelDemographics? HotelDemographics { get; set; }
         public HotelBranchRules? HotelBranchRules { get; set; }
         public HotelAmenities? HotelAmenities { get; set; }

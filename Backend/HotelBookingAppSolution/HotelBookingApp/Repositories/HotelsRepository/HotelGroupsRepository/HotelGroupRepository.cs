@@ -1,6 +1,8 @@
 ﻿using HotelBookingApp.Context;
+using HotelBookingApp.Exceptions;
 using HotelBookingApp.Interface.IRepository.IHotels.IHotelGroups;
 using HotelBookingApp.Models.Hotels.HotelGroups;
+using Microsoft.EntityFrameworkCore;
 
 namespace HotelBookingApp.Repositories.HotelsRepository.HotelGroupsRepository
 {
@@ -21,31 +23,32 @@ namespace HotelBookingApp.Repositories.HotelsRepository.HotelGroupsRepository
                 await _context.SaveChangesAsync();
                 if (accountCreation == null)
                 {
-                    throw new ErrorInConnectingRepository("Error: Group Account not created");
+                    throw new ErrorInConnectingRepositoryException("Error: Group Account not created");
                 }
                 return accountCreation.Entity;
             }
             catch (Exception ex)
             {
-                throw new ErrorInConnectingRepository($"Error: {ex.Message}");
+                throw new ErrorInConnectingRepositoryException($"Error: {ex.Message}");
             }
         }
 
-        public Task DeleteAsync(int id)
+        public Task<bool> DeleteAsync(int id)
         {
             try
             {
                 var deleteGroup = _context.HotelGroups.Find(id);
                 if (deleteGroup == null)
                 {
-                    throw new ErrorInConnectingRepository("Error: Group Account not found");
+                    throw new ErrorInConnectingRepositoryException("Error: Group Account not found");
                 }
                 _context.HotelGroups.Remove(deleteGroup);
-                return _context.SaveChangesAsync();
+                _context.SaveChangesAsync();
+                return Task.FromResult(true);
             }
             catch (Exception ex)
             {
-                throw new ErrorInConnectingRepository($"Error: {ex.Message}");
+                throw new ErrorInConnectingRepositoryException($"Error: {ex.Message}");
             }
         }
 
@@ -54,12 +57,41 @@ namespace HotelBookingApp.Repositories.HotelsRepository.HotelGroupsRepository
             throw new NotImplementedException();
         }
 
-        public Task<HotelGroup> GetByIdAsync(int id)
+        public async Task<HotelGroup> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var result = await _context.HotelGroups.FirstOrDefaultAsync(x => x.HotelGroupId == id);
+                if (result == null)
+                {
+                    throw new ErrorInConnectingRepositoryException("Error: Group Account not found");
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new ErrorInConnectingRepositoryException($"Error: {ex.Message}");
+            }
         }
 
-        public Task UpdateAsync(HotelGroup entity)
+        public async Task<HotelGroup?> GetHotelGroupByEmail(string Email)
+        {
+            try
+            {
+                var getGroup = await _context.HotelGroups.FirstOrDefaultAsync(x => x.HotelGroupEmail == Email);
+                if (getGroup == null)
+                {
+                    return null;
+                }
+                return getGroup;
+            }
+            catch (Exception ex)
+            {
+                throw new ErrorInConnectingRepositoryException($"Error: {ex.Message}");
+            }
+        }
+
+        public Task<HotelGroup> UpdateAsync(HotelGroup entity)
         {
             throw new NotImplementedException();
         }

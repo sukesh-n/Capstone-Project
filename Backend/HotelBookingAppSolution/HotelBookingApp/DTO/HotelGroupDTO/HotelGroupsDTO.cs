@@ -4,7 +4,6 @@ namespace HotelBookingApp.DTO.HotelGroupDTO
 {
     public class HotelGroupsDTO : HotelGroup
     {
-        public HotelGroup? HotelGroupDemographics { get; set; }
         
     }
 }

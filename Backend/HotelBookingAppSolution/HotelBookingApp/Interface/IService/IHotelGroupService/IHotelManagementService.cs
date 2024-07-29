@@ -10,5 +10,9 @@ namespace HotelBookingApp.Interface.IService.IHotelGroupService
         public Task<HotelBranchDTO> GetHotelBranch(int hotelBranchId);
         public Task<IEnumerable<HotelBranchDTO>> GetAllHotelBranchUnderGroup();
 
+        public Task<HotelBranchRoomDTO> AddBranchRoom(HotelBranchRoomDTO hotelBranchRoomDTO);
+        public Task<HotelBranchRoomDTO> UpdateBranchRoom(HotelBranchRoomDTO hotelBranchRoomDTO);
+        public Task<bool> DeleteRoomType(int RoomTypeId);
+
     }
 }

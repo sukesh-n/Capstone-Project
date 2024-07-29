@@ -16,13 +16,13 @@ namespace HotelBookingApp.Controllers.HotelGroup
             _hotelManagementService = hotelManagementService;
         }
 
-        [HttpPost]
-        [Route("AddNewHotelBranch")]
-        public async Task<IActionResult> AddNewHotelBranch(HotelBranchDTO addNewHotelBranchDTO)
-        {
-            var result = await _hotelManagementService.AddNewHotelBranch(addNewHotelBranchDTO);
-            return Ok(result);
-        }
+        //[HttpPost]
+        //[Route("AddNewHotelBranch")]
+        //public async Task<IActionResult> AddNewHotelBranch(HotelBranchDTO addNewHotelBranchDTO)
+        //{
+        //    var result = await _hotelManagementService.AddNewHotelBranch(addNewHotelBranchDTO);
+        //    return Ok(result);
+        //}
 
         [HttpPut]
         [Route("UpdateHotelBranch")]
@@ -31,12 +31,25 @@ namespace HotelBookingApp.Controllers.HotelGroup
             var result = await _hotelManagementService.UpdateHotelBranch(updateHotelBranchDTO);
             return Ok(result);
         }
-
+        [HttpPut]
+        [Route("UpdateHotelBranchRooms")]
+        public async Task<IActionResult> UpdateHotelBranchRooms(HotelBranchRoomDTO updateHotelBranchRoomDTO)
+        {
+            var result = await _hotelManagementService.AddBranchRoom(updateHotelBranchRoomDTO);
+            return Ok(result);
+        }
         [HttpDelete]
         [Route("DeleteHotelBranch")]
         public async Task<IActionResult> DeleteHotelBranch(int hotelBranchId)
         {
             var result = await _hotelManagementService.DeleteHotelBranch(hotelBranchId);
+            return Ok(result);
+        }
+        [HttpDelete]
+        [Route("DeleteHotelRoomType")]
+        public async Task<IActionResult> DeleteHotelRoomType(int roomTypeId)
+        {
+            var result = await _hotelManagementService.DeleteRoomType(roomTypeId);
             return Ok(result);
         }
 
@@ -54,5 +67,6 @@ namespace HotelBookingApp.Controllers.HotelGroup
             var result = await _hotelManagementService.GetAllHotelBranchUnderGroup();
             return Ok(result);
         }
+
     }
 }

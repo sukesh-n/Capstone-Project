@@ -21,18 +21,26 @@ namespace HotelBookingApp.Controllers.HotelGroup
         [Route("CreateGroupAccount")]
         public async Task<IActionResult> CreateGroupAccount(GroupAccountDTO groupAccountDTO)
         {
-            var result = await _groupAccountManagementService.CreateGroupAccount(groupAccountDTO);
-            return Ok(result);
+            try
+            {
+               var result = await _groupAccountManagementService.CreateGroupAccount(groupAccountDTO);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
         }
         [HttpPost]
         [Route("UpdateGroupAccount")]
-        public async Task<IActionResult> UpdateGroupAccount(GroupAccountDTO groupAccountDTO)
+        public async Task<IActionResult> UpdateGroupAccountSecurity(GroupAccountDTO groupAccountDTO)
         {
-            var result = await _groupAccountManagementService.UpdateGroupAccount(groupAccountDTO);
+            var result = await _groupAccountManagementService.UpdateGroupAccountSecurity(groupAccountDTO);
             return Ok(result);
         }
         [HttpDelete]
         [Route("DeleteGroupAccount")]
+        //[Authorize(Roles="admin")]
         public async Task<IActionResult> DeleteGroupAccount(int groupId)
         {
             var result = await _groupAccountManagementService.DeleteGroupAccount(groupId);
@@ -40,6 +48,7 @@ namespace HotelBookingApp.Controllers.HotelGroup
         }
         [HttpGet]
         [Route("GetGroupAccount")]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> GetGroupAccount(int groupId)
         {
             var result = await _groupAccountManagementService.GetGroupAccount(groupId);

@@ -22,7 +22,7 @@ namespace HotelBookingApp.Controllers.HotelGroup
         {
             try
             {
-                var result = await _hotelGroupManagementService.AddNewHotelGroup(addNewHotelGroupDTO);
+                var result = await _hotelGroupManagementService.AddHotelGroupDetails(addNewHotelGroupDTO);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -36,7 +36,7 @@ namespace HotelBookingApp.Controllers.HotelGroup
         {
             try
             {
-                var result = await _hotelGroupManagementService.UpdateHotelGroup(HotelGroupDTO);
+                var result = await _hotelGroupManagementService.UpdateHotelGroupDetails(HotelGroupDTO);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -50,7 +50,7 @@ namespace HotelBookingApp.Controllers.HotelGroup
         {
             try
             {
-                var result = await _hotelGroupManagementService.DeleteHotelGroup(hotelGroupId);
+                var result = await _hotelGroupManagementService.DeleteHotelGroupDetails(hotelGroupId);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -64,7 +64,7 @@ namespace HotelBookingApp.Controllers.HotelGroup
         {
             try
             {
-                var result = await _hotelGroupManagementService.GetHotelGroup(hotelGroupId);
+                var result = await _hotelGroupManagementService.GetHotelGroupDetails(hotelGroupId);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -78,7 +78,7 @@ namespace HotelBookingApp.Controllers.HotelGroup
         {
             try
             {
-                var result = await _hotelGroupManagementService.GetAllHotelGroup();
+                var result = await _hotelGroupManagementService.GetAllHotelGroupDetails();
                 return Ok(result);
             }
             catch (Exception ex)

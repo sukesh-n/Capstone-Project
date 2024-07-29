@@ -20,14 +20,22 @@ namespace HotelBookingApp.Controllers.HotelGroup
         [Route("CreateBranchAccount")]
         public async Task<IActionResult> CreateBranchAccount(BranchAccountDTO branchAccountDTO)
         {
-            var result = await _branchAccountManagementService.CreateBranchAccount(branchAccountDTO);
-            return Ok(result);
+            try
+            {                 
+                var result = await _branchAccountManagementService.CreateBranchAccount(branchAccountDTO);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+            
         }
         [HttpPost]
         [Route("UpdateBranchAccount")]
-        public async Task<IActionResult> UpdateBranchAccount(BranchAccountDTO branchAccountDTO)
+        public async Task<IActionResult> UpdateBranchAccountSecurity(string BranchMail,string Passowrd)
         {
-            var result = await _branchAccountManagementService.UpdateBranchAccount(branchAccountDTO);
+            var result = await _branchAccountManagementService.UpdateBranchAccountSecurity(BranchMail,Passowrd);
             return Ok(result);
         }
         [HttpDelete]
