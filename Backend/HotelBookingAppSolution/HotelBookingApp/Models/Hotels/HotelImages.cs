@@ -7,9 +7,10 @@ namespace HotelBookingApp.Models.Hotels
     public class HotelImages
     {
         [Key]
+        public int HotelImageId { get; set; }
         public int HotelBranchId { get; set; }
         public int RoomTypeId { get; set; }
-        public byte[]? RoomImage { get; set; }
+        public string? RoomImageUrl { get; set; }
         [ForeignKey("HotelBranchId")]
         public HotelBranch? Hotel { get; set; }
         [ForeignKey("RoomTypeId")]

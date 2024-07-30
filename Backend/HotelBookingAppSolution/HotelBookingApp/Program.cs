@@ -125,11 +125,13 @@ namespace HotelBookingApp
 
             #region Service
             builder.Services.AddScoped<Password>();
+            builder.Services.AddScoped<IAmountCalculatorService, AmountCalculatorService>();
             builder.Services.AddScoped<IHotelBrowseService, HotelBrowseService>();
             builder.Services.AddScoped<IHotelBookingService, HotelBookingService>();
             builder.Services.AddScoped<IGuestAccountService, GuestAccountService>();
             builder.Services.AddScoped<IGuestLoginService,GuestLoginService>();
             builder.Services.AddScoped<IGuestAccountService, GuestAccountService>();
+            builder.Services.AddScoped<IGuestDemographicsService, GuestDemographicsService>();
             builder.Services.AddScoped<IBranchBookingManagementService,BranchBookingService>();
             builder.Services.AddScoped<IBranchLoginService, BranchLoginService>();
             builder.Services.AddScoped<IBranchAccountService,BranchAccountService>();

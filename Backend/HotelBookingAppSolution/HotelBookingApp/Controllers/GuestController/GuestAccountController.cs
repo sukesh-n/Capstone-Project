@@ -30,6 +30,13 @@ namespace HotelBookingApp.Controllers.GuestController
             var result = await _guestAccountService.UpdateGuest(guestAccountDTO);
             return Ok(result);
         }
+        [HttpPost]
+        [Route("UpdateGuestSecurity")]
+        public async Task<IActionResult> UpdateGuestSecurity(string email, string password)
+        {
+            var result = await _guestAccountService.UpdateGuestSecurity(email, password);
+            return Ok(result);
+        }
         [HttpDelete]
         [Route("DeleteGuestAccount")]
         public async Task<IActionResult> DeleteGuestAccount(int guestId)

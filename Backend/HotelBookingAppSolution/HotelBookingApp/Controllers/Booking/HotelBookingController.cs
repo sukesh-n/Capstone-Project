@@ -18,16 +18,16 @@ namespace HotelBookingApp.Controllers.Booking
 
         [HttpPost]
         [Route("AddNewHotelBooking")]
-        public async Task<IActionResult> AddNewHotelBooking(HotelBookingDTO hotelBookingDTO)
+        public async Task<IActionResult> AddNewHotelBooking(BookingBranchDTO bookingBranchDTO)
         {
-            var result = await _hotelBookingService.AddNewHotelBooking(hotelBookingDTO);
+            var result = await _hotelBookingService.AddNewHotelBooking(bookingBranchDTO);
             return Ok(result);
         }
         [HttpPost]
         [Route("UpdateHotelBooking")]
-        public async Task<IActionResult> UpdateHotelBooking(HotelBookingDTO hotelBookingDTO)
+        public async Task<IActionResult> UpdateHotelBooking(BookingBranchDTO bookingBranchDTO)
         {
-            var result = await _hotelBookingService.UpdateHotelBooking(hotelBookingDTO);
+            var result = await _hotelBookingService.UpdateHotelBooking(bookingBranchDTO);
             return Ok(result);
         }
         [HttpDelete]

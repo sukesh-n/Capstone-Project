@@ -11,11 +11,11 @@ namespace HotelBookingApp.Models.Payment
         public int BookingPaymentId { get; set; }
         public int BookingId { get; set; }
         [Column(TypeName = "decimal(18,2)")]
-        public float TotalAmountForBooking { get; set; }
+        public decimal TotalAmountForBooking { get; set; }
         [Column(TypeName = "decimal(18,2)")]
-        public float AdvanceAmount { get; set; }
+        public decimal AdvanceAmount { get; set; }
         [Column(TypeName = "decimal(18,2)")]
-        public float HotelAmount { get; set; }
+        public decimal HotelAmount { get; set; }
         public EnumPaymentStatus AdvancePaymentStatus { get; set; }
         public EnumPaymentStatus HotelPaymentStatus { get; set; }
         public EnumPaymentMethod AdvancePaymentMethod { get; set; }

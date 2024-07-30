@@ -13,7 +13,8 @@ namespace HotelBookingApp.Models.Hotels
         public EnumRoomTypes RoomTypeName { get; set; }
         public string RoomTypeDescription { get; set; } = string.Empty;
         public int NumberOfRooms { get; set; }
-        public float RoomPrice { get; set; }
+        [Column(TypeName = "decimal(18,2)")]
+        public decimal RoomPrice { get; set; }
         public int NumberOfAdults { get; set; }
         public int NumberOfBed { get; set; }
         [ForeignKey("HotelBranchId")]

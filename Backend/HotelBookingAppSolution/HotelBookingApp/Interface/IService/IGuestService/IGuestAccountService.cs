@@ -9,5 +9,7 @@ namespace HotelBookingApp.Interface.IService.IGuestService
         Task<GuestAccountDTO> DeleteGuest(int guestId);
         Task<GuestDTO> GetGuest(int guestId);
         Task<IEnumerable<GuestDTO>> GetAllGuests();
+        Task<GuestAccountDTO> UpdateGuestSecurity(string email, string password);
+
     }
 }

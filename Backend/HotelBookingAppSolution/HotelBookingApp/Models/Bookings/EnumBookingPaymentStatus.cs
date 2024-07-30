@@ -4,6 +4,7 @@
     {
         AdvancePaidAndRemainingOnCheckIn,
         FullPaid,
-        OptedForCancellation
+        OptedForCancellation,
+        NotPaid
     }
 }

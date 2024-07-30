@@ -5,6 +5,7 @@
         CreditCard,
         DebitCard,
         NetBanking,
-        UPI
+        UPI,
+        NA
     }
 }

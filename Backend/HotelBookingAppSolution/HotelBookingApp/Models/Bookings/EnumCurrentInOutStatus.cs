@@ -4,7 +4,6 @@
     {
         BookedAndWaitingForCheckIn,
         CheckedIn,
-        CheckedOut
-        
+        CheckedOut        
     }
 }
