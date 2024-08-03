@@ -6,7 +6,6 @@ namespace HotelBookingApp.Models.Hotels
 {
     public class RoomAmenities
     {
-        [Key]
         public int HotelBranchId { get; set; }
         public int RoomTypeId { get; set; }
         public bool IsOnGroundFloor { get; set; }

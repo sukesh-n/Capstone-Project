@@ -17,7 +17,9 @@ const BranchDashBoard = () => {
     const onViewCurrentBookings = () => {
         navigate('/hotelbranch/branch/view-current-bookings');
     };
-
+    const onViewYourRooms = () => {
+        navigate('/hotelbranch/branch/view-rooms');
+    };
     return (
         <Container>
             <Typography variant="h4" gutterBottom style={{ marginTop: 16 }}>
@@ -40,6 +42,16 @@ const BranchDashBoard = () => {
                             <Typography variant="h6">Add Room Type and Images</Typography>
                             <Typography variant="body2" color="textSecondary">
                                 Add or modify room types and upload images for the branch.
+                            </Typography>
+                        </CardContent>
+                    </CardActionArea>
+                </Card>
+                <Card onClick={onViewYourRooms} sx={{ cursor: 'pointer' }}>
+                    <CardActionArea>
+                        <CardContent>
+                            <Typography variant="h6">View Rooms of Your Branch</Typography>
+                            <Typography variant="body2" color="textSecondary">
+                                View the dashboard to see an overview of rooms.
                             </Typography>
                         </CardContent>
                     </CardActionArea>

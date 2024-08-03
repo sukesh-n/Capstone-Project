@@ -1,5 +1,6 @@
 ﻿using HotelBookingApp.DTO.HotelGroupDTO;
 using HotelBookingApp.Interface.IService.IHotelGroupService;
+using HotelBookingApp.Models.Hotels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -57,7 +58,14 @@ namespace HotelBookingApp.Controllers.HotelGroup
         [Route("GetHotelBranch")]
         public async Task<IActionResult> GetHotelBranch(int hotelBranchId)
         {
-            var result = await _hotelManagementService.GetHotelBranch(hotelBranchId);
+            var result = await _hotelManagementService.GetAllBranchRooms(hotelBranchId);
+            return Ok(result);
+        }
+        [HttpGet]
+        [Route("GetHotelBranchRooms")]
+        public async Task<IActionResult> GetHotelBranchRooms(int hotelBranchId)
+        {
+            var result = await _hotelManagementService.GetAllBranchRooms(hotelBranchId);
             return Ok(result);
         }
         [HttpGet]
@@ -65,6 +73,20 @@ namespace HotelBookingApp.Controllers.HotelGroup
         public async Task<IActionResult> GetAllHotelBranch()
         {
             var result = await _hotelManagementService.GetAllHotelBranchUnderGroup();
+            return Ok(result);
+        }
+        [HttpPut]
+        [Route("UpdateBranchStatus")]
+        public async Task<IActionResult> UpdateBranchStatus(int branchId, BranchStatus branchStatus)
+        {
+            var result = await _hotelManagementService.UpdateStatus(branchId, branchStatus);
+            return Ok(result);
+        }
+        [HttpGet]
+        [Route("GetBranchStatus")]
+        public async Task<IActionResult> GetBranchStatus(int branchId)
+        {
+            var result = await _hotelManagementService.GetBranchStatus(branchId);
             return Ok(result);
         }
 

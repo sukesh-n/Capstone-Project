@@ -7,6 +7,5 @@ namespace HotelBookingApp.DTO.HotelGroupDTO
         public int HotelBranchId { get; set; }
         public RoomType RoomType { get; set; } = new RoomType();
         public RoomAmenities RoomAmenities { get; set; } = new RoomAmenities();
-
     }
 } 

@@ -29,6 +29,43 @@ namespace HotelBookingApp.Services.FreeBrowse
             _bookingHistoryRepository = bookingHistoryRepository;
         }
 
+        public async Task<IEnumerable<BranchRoomTypeFetchReturnDTO>> BranchRoomTypeFetchReturnDTOs(int BranchId, DateTime CheckInDate, DateTime CheckOutDate)
+        {
+            try
+            {
+                var roomTypes = await _roomTypeRepository.GetRoomTypesByBranchId(BranchId);
+                if (roomTypes == null)
+                {
+                    throw new ErrorInServiceException("No Room Types Found");
+                }
+                var BranchRoomTypeFetchReturnDTOs = new List<BranchRoomTypeFetchReturnDTO>();
+                foreach (var roomType in roomTypes)
+                {
+                    var IsAvailable = await _bookingHistoryRepository.CheckDateAvailabilityForRoomType(CheckInDate, CheckOutDate, BranchId, roomType.RoomTypeId,roomType.NumberOfRooms);
+                    if (IsAvailable.NoOfDaysAvailable == 0)
+                    {
+                        continue;
+                    }
+                    var BranchRoomTypeFetchReturnDTO = new BranchRoomTypeFetchReturnDTO
+                    {
+                        BranchId = roomType.HotelBranchId,
+                        RoomType = roomType.RoomTypeName,
+                        RoomTypeId = roomType.RoomTypeId,
+                        PriceDay = roomType.RoomPrice,
+                        NumberOfRoomsAvailable = IsAvailable.NoOfRoomsAvailable,
+                        IsAvailable = true,
+
+                    };
+                    BranchRoomTypeFetchReturnDTOs.Add(BranchRoomTypeFetchReturnDTO);
+                }
+                return BranchRoomTypeFetchReturnDTOs;
+            }
+            catch (Exception e)
+            {
+                throw new ErrorInServiceException("Error in Service", e);
+            }
+        }
+
         public async Task<IEnumerable<HotelBrowseReturnDTO>?> FilterHotelByLocationRequest(HotelBrowseRequestDTO hotelBrowseRequestDTO)
         {
             try

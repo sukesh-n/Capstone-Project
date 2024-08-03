@@ -54,5 +54,23 @@ namespace HotelBookingApp.Controllers.InitialBrowse
 
             return Ok(result);
         }
+        [HttpPost]
+        [Route("GetBranchRoomType")]
+        public async Task<IActionResult> GetBranchRoomType(int BranchId, DateTime CheckInTime, DateTime CheckOutTime)
+        {
+            if (BranchId <= 0)
+            {
+                return BadRequest("Invalid Branch ID.");
+            }
+
+            var result = await _hotelBrowseService.BranchRoomTypeFetchReturnDTOs(BranchId, CheckInTime, CheckOutTime);
+
+            if (result == null)
+            {
+                return NotFound($"No details found for Branch ID {BranchId}.");
+            }
+
+            return Ok(result);
+        }
     }
 }

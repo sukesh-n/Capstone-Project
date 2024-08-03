@@ -43,5 +43,24 @@ namespace HotelBookingApp.Context
         public DbSet<HotelSettlementPayment> HotelSettlementPayments { get; set; } = null!;
         public DbSet<Refund> Refunds { get; set; } = null!;
         public DbSet<Revenue> Revenues { get; set; } = null!;
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            
+            modelBuilder.Entity<RoomAmenities>()
+                .HasKey(r => new { r.HotelBranchId, r.RoomTypeId });
+
+            // Configure other entity mappings and relationships as needed
+            modelBuilder.Entity<RoomAmenities>()
+                .HasOne(r => r.Hotel)
+                .WithMany()  // You may need to specify the inverse navigation property if there is one
+                .HasForeignKey(r => r.HotelBranchId);
+
+            modelBuilder.Entity<RoomAmenities>()
+                .HasOne(r => r.RoomType)
+                .WithMany()  // You may need to specify the inverse navigation property if there is one
+                .HasForeignKey(r => r.RoomTypeId);
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

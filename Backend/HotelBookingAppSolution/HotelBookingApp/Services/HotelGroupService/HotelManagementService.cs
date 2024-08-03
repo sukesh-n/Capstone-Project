@@ -1,9 +1,12 @@
-﻿using HotelBookingApp.DTO.HotelGroupDTO;
+﻿using HotelBookingApp.DTO.HotelBranchDTO;
+using HotelBookingApp.DTO.HotelGroupDTO;
 using HotelBookingApp.Exceptions;
+using HotelBookingApp.Interface.IRepository.IBookings;
 using HotelBookingApp.Interface.IRepository.IHotels;
 using HotelBookingApp.Interface.IRepository.IHotels.IHotelBranches;
 using HotelBookingApp.Interface.IRepository.IHotels.IHotelGroups;
 using HotelBookingApp.Interface.IService.IHotelGroupService;
+using HotelBookingApp.Models.Hotels;
 
 namespace HotelBookingApp.Services.HotelGroupService
 {
@@ -17,7 +20,9 @@ namespace HotelBookingApp.Services.HotelGroupService
         public readonly IHotelAmenitiesRepository _hotelAmenitiesRepository;
         public readonly IRoomTypeRepository _roomTypeRepository;
         public readonly IRoomAmenitiesRepository _roomAmenitiesRepository;
-        public HotelManagementService(IHotelBranchRepository hotelBranchRepository, IHotelDemographicsRepository hotelDemographicsRepository, IHotelImagesRepository hotelImagesRepository, IHotelBranchRulesRepository hotelBranchRulesRepository, IHotelAmenitiesRepository hotelAmenitiesRepository, IRoomAmenitiesRepository roomAmenitiesRepository, IRoomTypeRepository roomTypeRepository, IHotelGroupRepository hotelGroupRepository)
+        public readonly IBookingHistoryRepository _bookingHistoryRepository;
+        public readonly IBranchStatusRepository _branchStatusRepository;
+        public HotelManagementService(IHotelBranchRepository hotelBranchRepository, IHotelDemographicsRepository hotelDemographicsRepository, IHotelImagesRepository hotelImagesRepository, IHotelBranchRulesRepository hotelBranchRulesRepository, IHotelAmenitiesRepository hotelAmenitiesRepository, IRoomAmenitiesRepository roomAmenitiesRepository, IRoomTypeRepository roomTypeRepository, IHotelGroupRepository hotelGroupRepository, IBookingHistoryRepository bookingHistoryRepository, IBranchStatusRepository branchStatusRepository)
         {
             _hotelBranchRepository = hotelBranchRepository;
             _hotelDemographicsRepository = hotelDemographicsRepository;
@@ -27,6 +32,8 @@ namespace HotelBookingApp.Services.HotelGroupService
             _roomAmenitiesRepository = roomAmenitiesRepository;
             _roomTypeRepository = roomTypeRepository;
             _hotelGroupRepository = hotelGroupRepository;
+            _bookingHistoryRepository = bookingHistoryRepository;
+            _branchStatusRepository = branchStatusRepository;
         }
 
         public async Task<HotelBranchRoomDTO> AddBranchRoom(HotelBranchRoomDTO hotelBranchRoomDTO)
@@ -50,7 +57,7 @@ namespace HotelBookingApp.Services.HotelGroupService
                 hotelBranchRoomDTO.RoomAmenities.Hotel = GetHotelBranch;
                 var GetDuplicateRoomType = await _roomTypeRepository.GetByBranchAndRoomType(hotelBranchRoomDTO.HotelBranchId, hotelBranchRoomDTO.RoomType.RoomTypeName);
                 var AddBranchRoomType = new Models.Hotels.RoomType();
-                if (GetDuplicateRoomType == null)
+                if (GetDuplicateRoomType == null || GetDuplicateRoomType.HotelBranchId==0)
                 {
                     AddBranchRoomType = await _roomTypeRepository.AddAsync(hotelBranchRoomDTO.RoomType);
                 }
@@ -74,7 +81,7 @@ namespace HotelBookingApp.Services.HotelGroupService
 
                 hotelBranchRoomDTO.RoomAmenities.RoomTypeId = AddBranchRoomType.RoomTypeId;
                 hotelBranchRoomDTO.RoomAmenities.RoomType= AddBranchRoomType;
-                if (DuplicateRoomAmenities != null)
+                if (DuplicateRoomAmenities.RoomTypeId != 0)
                 {
                     var UpdateRoomAmenities = await _roomAmenitiesRepository.UpdateAsync(hotelBranchRoomDTO.RoomAmenities);
                     if (UpdateRoomAmenities == null)
@@ -141,9 +148,64 @@ namespace HotelBookingApp.Services.HotelGroupService
             }
         }
 
+        public async Task<IEnumerable<BranchRoomDetailsDTO>> GetAllBranchRooms(int BranchId)
+        {
+            try
+            {
+                var BranchRoomReturnDTOs = new List<BranchRoomDetailsDTO>();
+                var BranchRooms = await _roomTypeRepository.GetRoomTypesByBranchId(BranchId);
+                var CurrentBookings = await _bookingHistoryRepository.GetBookingByHotelBranchId(BranchId);
+                if (BranchRooms == null)
+                {
+                    throw new EmptyDataException("No Rooms Found");
+                }
+                foreach (var room in BranchRooms)
+                {
+                    var RoomAmenities = await _roomAmenitiesRepository.GetByBranchAndAmenity(BranchId, room.RoomTypeId);
+                    
+                    if (RoomAmenities == null)
+                    {
+                        throw new EmptyDataException("No Room Amenities Found");
+                    }
+                    EnumRoomTypes roomType = room.RoomTypeName;
+                    var BranchRoomReturnDTO = new BranchRoomDetailsDTO
+                    {
+                        RoomTypeId = room.RoomTypeId,
+                        HotelBranchId = room.HotelBranchId,
+                        RoomTypeName = roomType.ToString(),
+                        NoOfCurrentBookings = CurrentBookings.Where(x => x.RoomTypeId == room.RoomTypeId).Count(),
+                        CurrentAvailableRooms = room.NumberOfRooms - CurrentBookings.Where(x => x.RoomTypeId == room.RoomTypeId).Count()
+                    };
+                    BranchRoomReturnDTOs.Add(BranchRoomReturnDTO);
+                }
+                return BranchRoomReturnDTOs;
+            }
+            catch (Exception ex)
+            {
+                throw new ErrorInServiceException(ex.Message);
+            }
+        }
+
         public Task<IEnumerable<HotelBranchDTO>> GetAllHotelBranchUnderGroup()
         {
             throw new NotImplementedException();
+        }
+
+        public async Task<BranchStatus> GetBranchStatus(int BranchId)
+        {
+            try
+            {
+                var getStatus = await _branchStatusRepository.GetBranchStatus(BranchId);
+                if (getStatus == null)
+                {
+                    return new BranchStatus();
+                }
+                return getStatus;
+            }
+            catch (Exception ex)
+            {
+                throw new ErrorInServiceException(ex.Message);
+            }
         }
 
         public Task<HotelBranchDTO> GetHotelBranch(int hotelBranchId)
@@ -207,6 +269,36 @@ namespace HotelBookingApp.Services.HotelGroupService
             catch(Exception ex)
             {
                 throw new ErrorInServiceException($"Error: {ex.Message}");
+            }
+        }
+
+        public async Task<BranchStatus> UpdateStatus(int BranchId, BranchStatus branchStatus)
+        {
+            try
+            {
+                var getBranch = await _hotelBranchRepository.GetByIdAsync(branchStatus.HotelBranchId);
+                if (getBranch == null)
+                {
+                    throw new EmptyDataException("Branch not found");
+                }
+                branchStatus.HotelBranch = getBranch;
+                var getgroup = await _hotelGroupRepository.GetByIdAsync(getBranch.HotelGroupId);
+                if (getgroup == null)
+                {
+                    throw new EmptyDataException("Group not found");
+                }
+                branchStatus.HotelBranch.HotelGroup = getgroup;
+
+                var UpdateStatus = await _branchStatusRepository.UpdateBranchStatus(branchStatus);
+                if (UpdateStatus == null)
+                {
+                    throw new ErrorInServiceException("Error: Status not updated");
+                }
+                return UpdateStatus;
+            }
+            catch (Exception ex)
+            {
+                throw new ErrorInServiceException(ex.Message);
             }
         }
     }
