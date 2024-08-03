@@ -2,6 +2,7 @@
 using HotelBookingApp.Exceptions;
 using HotelBookingApp.Interface.IRepository.IHotels;
 using HotelBookingApp.Models.Hotels;
+using HotelBookingApp.Models.Hotels.HotelBranches;
 using Microsoft.EntityFrameworkCore;
 
 namespace HotelBookingApp.Repositories.HotelsRepository
@@ -82,6 +83,27 @@ namespace HotelBookingApp.Repositories.HotelsRepository
                     };
                 }
                 return result;
+            }
+            catch (Exception ex)
+            {
+                throw new ErrorInConnectingRepositoryException("Unable to get Demography", ex);
+            }
+        }
+
+        public async Task<IEnumerable<HotelDemographics>?> GetHotelBranchByLocation(string? State, string? District)
+        {
+            try
+            {
+                if(State == null || District == null)
+                {
+                    return null;
+                }
+                var GetHotelBranches = await _context.HotelDemographics.Where(h => h.HotelState.ToLower().Trim() == State.ToLower().Trim() && h.HotelCity.ToLower().Trim() == District.ToLower().Trim()).ToListAsync();
+                if (GetHotelBranches == null)
+                {
+                    return null;
+                }
+                return GetHotelBranches;
             }
             catch (Exception ex)
             {

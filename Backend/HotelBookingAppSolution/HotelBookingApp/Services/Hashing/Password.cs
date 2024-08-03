@@ -16,7 +16,7 @@ namespace HotelBookingApp.Services.Hashing
         {
             return Encoding.UTF8.GetBytes(Password);
         }
-        private bool ComparePassword(string password, byte[] storedPassword, byte[] key)
+        public bool ComparePassword(string password, byte[] storedPassword, byte[] key)
         {
             using (var hmac = new HMACSHA512(key))
             {

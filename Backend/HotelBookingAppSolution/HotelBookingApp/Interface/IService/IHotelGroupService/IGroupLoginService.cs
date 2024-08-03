@@ -4,7 +4,7 @@ namespace HotelBookingApp.Interface.IService.IHotelGroupService
 {
     public interface IGroupLoginService
     {
-        public Task<HotelGroupLoginDTO> GroupLogin(HotelGroupLoginDTO hotelGroupLoginDTO);
+        public Task<GroupLoginReturnDTO> GroupLogin(HotelGroupLoginDTO hotelGroupLoginDTO);
 
     }
 }

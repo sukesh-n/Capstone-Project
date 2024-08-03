@@ -43,9 +43,25 @@ namespace HotelBookingApp.Repositories.HotelsRepository.HotelBranchesRepository
             throw new NotImplementedException();
         }
 
-        public Task<HotelBranchSecurity> GetByIdAsync(int id)
+        public async Task<HotelBranchSecurity> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var getSecurity = await _context.HotelBranchSecurities
+                                                 .FirstOrDefaultAsync(h => h.HotelBranchId == id);
+                if(getSecurity == null)
+                {
+                    return new HotelBranchSecurity
+                    {
+                        HotelBranchId = -1
+                    };
+                }
+                return getSecurity;
+            }
+            catch (Exception ex)
+            {
+                throw new ErrorInConnectingRepositoryException($"Error: {ex.Message}");
+            }
         }
 
         public async Task<HotelBranchSecurity> GetSecurityByBranchId(int BranchId)

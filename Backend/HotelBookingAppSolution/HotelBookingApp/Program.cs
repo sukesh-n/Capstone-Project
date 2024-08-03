@@ -12,6 +12,7 @@ using HotelBookingApp.Interface.IService.IBookingService;
 using HotelBookingApp.Interface.IService.IGuestService;
 using HotelBookingApp.Interface.IService.IHotelBranchService;
 using HotelBookingApp.Interface.IService.IHotelGroupService;
+using HotelBookingApp.Interface.IToken;
 using HotelBookingApp.Repositories.AdminsRepository;
 using HotelBookingApp.Repositories.BookingsRepository;
 using HotelBookingApp.Repositories.GuestsRepository;
@@ -19,12 +20,14 @@ using HotelBookingApp.Repositories.HotelsRepository;
 using HotelBookingApp.Repositories.HotelsRepository.HotelBranchesRepository;
 using HotelBookingApp.Repositories.HotelsRepository.HotelGroupsRepository;
 using HotelBookingApp.Repositories.PaymentsRepository;
+using HotelBookingApp.Services.BlobService;
 using HotelBookingApp.Services.BookingService;
 using HotelBookingApp.Services.FreeBrowse;
 using HotelBookingApp.Services.GuestService;
 using HotelBookingApp.Services.Hashing;
 using HotelBookingApp.Services.HotelBranchService;
 using HotelBookingApp.Services.HotelGroupService;
+using HotelBookingApp.Token;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -92,7 +95,7 @@ namespace HotelBookingApp
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
             });
             #endregion
-
+            // Database Connection
 
             #region Method 
             builder.Services.AddScoped<IAdminRepository, AdminRepository>();
@@ -137,10 +140,12 @@ namespace HotelBookingApp
             builder.Services.AddScoped<IBranchAccountService,BranchAccountService>();
             builder.Services.AddScoped<IGroupAccountService, GroupAccountService>();
             builder.Services.AddScoped<IGroupLoginService, GroupLoginService>();
+            builder.Services.AddScoped<ITokenService,TokenService>();
             builder.Services.AddScoped<IHotelGroupManagementService, HotelGroupManagementService>();
             builder.Services.AddScoped<IHotelManagementService, HotelManagementService>();
             #endregion
 
+            builder.Services.AddScoped<HotelImageBlobService>();
             #region CORS
             builder.Services.AddCors(opts =>
             {

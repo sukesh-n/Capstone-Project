@@ -16,5 +16,6 @@ namespace HotelBookingApp.Interface.IRepository.IBookings
         public Task<BookingHistory> UpdateCheckInOutStatus(int BookingId,BookingHistory bookingHistory);
         public Task<BookingHistory> UpdateBookingHistoryPaymentStatus(int BookingId,BookingHistory bookingHistory);
 
+        public Task<(int NoOfDaysAvailable,DateTime LongestWindowStartDate,DateTime LongestWindowEndDate)> CheckDateAvailability(DateTime CheckInDate,DateTime CheckOutDate,int HotelBranchId);
     }
 }

@@ -81,6 +81,25 @@ namespace HotelBookingApp.Repositories.HotelsRepository
             throw new NotImplementedException();
         }
 
+        public async Task<List<RoomType>?> GetRoomTypesByBranchId(int BranchId)
+        {
+            try
+            {
+                var roomTypes = await _context.RoomTypes
+                    .Where(r => r.HotelBranchId == BranchId)
+                    .ToListAsync();
+                if (roomTypes == null)
+                {
+                    return null;
+                }
+                return roomTypes;
+            }
+            catch (Exception e)
+            {
+                throw new ErrorInConnectingRepositoryException("Error in Repository", e);
+            }
+        }
+
         public async Task<RoomType> UpdateAsync(RoomType entity)
         {
             if (entity == null)

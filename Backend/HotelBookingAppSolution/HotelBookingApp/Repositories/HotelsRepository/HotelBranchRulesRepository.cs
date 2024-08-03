@@ -43,9 +43,21 @@ namespace HotelBookingApp.Repositories.HotelsRepository
             throw new NotImplementedException();
         }
 
-        public Task<HotelBranchRules> GetByIdAsync(int id)
+        public async Task<HotelBranchRules> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var BranchRules = await _context.HotelBranchRules.Where(h=> h.HotelBranchId == id).FirstOrDefaultAsync();
+                if (BranchRules == null)
+                {
+                    throw new KeyNotFoundException($"Branch Rules with ID {id} not found.");
+                }
+                return BranchRules;
+            }
+            catch (Exception ex)
+            {
+                throw new ErrorInConnectingRepositoryException($"Error: {ex.Message}");
+            }
         }
 
         public async Task<HotelBranchRules> UpdateAsync(HotelBranchRules entity)

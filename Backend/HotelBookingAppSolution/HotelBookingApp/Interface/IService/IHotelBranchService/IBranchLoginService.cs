@@ -4,7 +4,7 @@ namespace HotelBookingApp.Interface.IService.IHotelBranchService
 {
     public interface IBranchLoginService
     {
-        public Task<HotelBranchLoginDTO> BranchLogin(HotelBranchLoginDTO hotelBranchLoginDTO);
+        public Task<BranchLoginReturnDTO> BranchLogin(HotelBranchLoginDTO hotelBranchLoginDTO);
 
     }
 }
